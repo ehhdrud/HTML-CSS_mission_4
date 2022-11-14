@@ -95,15 +95,17 @@ h1 {
 select {
   display: flex;
   align-items: center;
-  border: none;
-  padding-left: 12px;
-  /* -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none; */
-  /* svg요소가 파일에 없는데... */
   width: 135px;
   height: 40px;
+  border: none;
+  padding-left: 12px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   background: none;
+  background-image: url(/assets/icon/down-arrow.svg);
+  background-position: 109px 17px;
+  background-repeat: no-repeat;
   color: var(--color-gray-700);
   /* select box에 보여지는 selected option의 색 변경 가능! */
   /* 변경할 값이 selected option이라도 select box의 스타일링이므로 option말고 select에 스타일링 해야함! */
