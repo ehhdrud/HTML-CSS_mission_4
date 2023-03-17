@@ -1,4 +1,4 @@
-/* 헤더 */
+/* 1. 전체 */
 body {
   border-bottom: 1px solid var(--color-gray-100);
   font-family: "Noto Sans KR", sans-serif;
@@ -7,20 +7,20 @@ body {
   line-height: 120%;
 }
 
+/* 2. 로그인 바 */
 .login-bar {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 34px;
   background-color: var(--color-gray-100);
-  white-space: nowrap;
 }
 
 .login-bar ul {
   display: flex;
+  flex-shrink: 0;
   list-style: none;
   padding-left: 0px;
-  /* ul영역은 자동으로 padding-left:40px을 가지므로 이를 없애준다 */
 }
 
 .login-bar ul li:nth-child(1) {
@@ -50,6 +50,8 @@ body {
   margin-right: 8px;
 }
 
+/* 3. 내비게이션 */
+/* 3.1. 내비게이션 - 카테고리 버튼 */
 .button--category {
   display: flex;
   flex-direction: column;
@@ -68,6 +70,7 @@ body {
   margin-top: 72px;
 }
 
+/* 3.2. 내비게이션 - 로고 */
 h1 {
   width: 176px;
   height: 40px;
@@ -81,6 +84,7 @@ h1 {
   visibility: hidden;
 }
 
+/* 3.3. 내비게이션 - 검색창 */
 .search-bar {
   display: flex;
   align-items: center;
@@ -92,8 +96,6 @@ h1 {
 select {
   display: flex;
   align-items: center;
-  -webkit-appearance: none;
-  -moz-appearance: none;
   appearance: none;
   width: 135px;
   height: 40px;
@@ -104,8 +106,8 @@ select {
   background-position: 109px 17px;
   background-repeat: no-repeat;
   color: var(--color-gray-700);
-  /* select box에 보여지는 selected option의 색 변경 가능! */
-  /* 변경할 값이 selected option이라도 select box의 스타일링이므로 option말고 select에 스타일링 해야함! */
+  /* select box에 보여지는 selected option의 색 변경 가능.
+  변경할 값이 selected option이라도 select box의 스타일링이므로 option말고 select에 스타일링 해야함. */
 }
 
 input {
@@ -138,6 +140,7 @@ input {
   background-color: rgba(0, 0, 0, 0);
 }
 
+/* 3.4. 내비게이션 - 마이쿠팡 */
 .myCoupang-btn {
   display: flex;
   justify-content: center;
@@ -157,24 +160,22 @@ input {
 }
 
 .myCoupang > ul {
-  visibility: hidden;
-  position: absolute;
-  /* `visibility: hidden`을 사용함으로써 요소가 그 자리는 그대로 유지하지만 레이아웃 상에서 그려지지는 않는다.
-  이를 통해 말풍선 모양의 테두리를 만들 수 있음! */
-}
-
-.is--active ul {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  visibility: hidden;
+  position: absolute;
   list-style: none;
-  visibility: visible;
-  padding: 15px 0px;
   width: 90px;
   height: 150px;
+  padding: 15px 0px;
   border: 1px solid var(--color-gray-300);
   background-color: var(--color-white);
+}
+
+.is--active ul {
+  visibility: visible;
 }
 
 .myCoupang > ul::before {
@@ -201,10 +202,10 @@ input {
   content: "";
 }
 
+/* 3.5. 내비게이션 - 장바구니 */
 .cart {
   position: relative;
   left: -15px;
-  border: none;
 }
 
 .cart-btn {
@@ -226,21 +227,21 @@ input {
 }
 
 .cart-txt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   visibility: hidden;
   position: absolute;
   top: 70px;
   left: -252px;
-}
-
-.cart--empty .cart-txt {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  visibility: visible;
   width: 291px;
   height: 99px;
   border: 1px solid var(--color-gray-300);
   background-color: var(--color-white);
+}
+
+.cart--empty .cart-txt {
+  visibility: visible;
 }
 
 .cart-size {
@@ -281,30 +282,24 @@ input {
   content: "";
 }
 
-.type-navigation {
+/* 3.6. 내비게이션 - 푸터 */
+.footer {
   margin-left: 36px;
 }
 
-.type-navigation ul {
+.footer ul {
   list-style: none;
   width: 765px;
   height: 26px;
   padding: 0px;
 }
 
-.type-navigation li {
+.footer li {
   display: inline-block;
   padding: 6px 14px;
 }
 
-.type-navigation span {
-  vertical-align: middle;
-}
-
-.icon {
-  vertical-align: middle;
-}
-
+/* 4. 그리드 레이아웃 설계 */
 nav {
   display: grid;
   grid-template-areas:
@@ -340,7 +335,7 @@ nav {
   margin-top: 29px;
 }
 
-.type-navigation {
+.footer {
   grid-area: six;
   margin-left: 36px;
 }
